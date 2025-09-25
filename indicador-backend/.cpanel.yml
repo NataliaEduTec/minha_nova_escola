@@ -1,0 +1,7 @@
+deployment:
+  tasks:
+    - /bin/echo "Rodando o script de deploy!"
+    - /usr/bin/touch /home/minhanov/aramari.minhanovaescola.com.br/indicadores-backend/deploy-test.txt
+    - /bin/echo "Iniciando deploy..."
+    - /bin/rsync -av --exclude='.git' --exclude='.cpanel.yml' ./ /home/minhanov/aramari.minhanovaescola.com.br/indicadores-backend/
+    - /bin/echo "Deploy concluído com sucesso!"

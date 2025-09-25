@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Poppins", serif;
+}
+
+html, body {
+    height: 100%;
+    touch-action: manipulation;
+}
+
+:root {
+    --primary-color: rgb(59 130 246);
+    --primary-color-dark: rgb(37 99 235);
+
+    /*--bg-gradient-from: #FFF;*/
+    /*--bg-gradient-via: #A2C6FF;*/
+    /*--bg-gradient-to: #6C63FF;*/
+
+    --principal-color-light: #4a4d7e;
+    --principal-color: #353866;
+    --principal-color-dark: #2d315a;
+
+    --bg-gradient-from: #353866;
+    --bg-gradient-via: #353866;
+    --bg-gradient-to: #353866;
+
+    --color-red-light: #FFB3B3;
+    --color-red: #FF6B6B;
+    --color-red-dark: #FF4D4D;
+
+    --color-green-light: #B3FFB3;
+    --color-green: #4CAF50;
+    --color-green-dark: #4DFF4D;
+
+    --color-yellow-light: #FFF2B3;
+    --color-yellow: #FFF76B;
+    --color-yellow-dark: #FFEC4D;
+
+    --color-blue-light: #B3CCFF;
+    --color-blue: #6B9EFF;
+    --color-blue-dark: #4D80FF;
+
+    --color-red-dark-light: #FF4D4D;
+    --color-green-dark-light: #4DFF4D;
+    --color-yellow-dark-light: #FFEC4D;
+    --color-blue-dark-light: #4D80FF;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #6b9eff transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6b9eff, #34b3ff);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #34b3ff, #1d9bff);
+}
+
+*::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 16px;
+}
+
+*::-webkit-scrollbar-button {
+    display: none !important;
+}
+
+*::-webkit-scrollbar-track:hover {
+    background: #e6e6e6;
+}
+
+div::-webkit-scrollbar{
+    background-color: #fff;
+    width: .5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #55c;
+}
+
+::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+.open-menu {
+    animation: open-menu 300ms ease-in-out forwards;
+}
+
+.close-menu {
+    animation: close-menu 300ms ease-in-out forwards;
+}
+
+@keyframes open-menu {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+@keyframes close-menu {
+    from {
+        max-height: 500px;
+        opacity: 1;
+    }
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+.fc-daygrid-day {
+    border: 5px solid transparent !important;
+    border-radius: 4px;
+}
+
+.fc-daygrid-day:hover {
+    background-color: #dadada;
+    /*border-color: red;*/
+}
+
+.fc-day-sat, .fc-day-sun {
+    background-color: #f0f8ff;
+}
+.fc-day-today {
+    border: 2px solid red;
+}
+
+
+.fc-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .fc-toolbar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        flex-direction: column-reverse;
+        gap: 8px;
+        text-align: center !important;
+    }
+
+    .fc-toolbar .fc-toolbar-chunk {
+        text-align: center !important;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.fc-col-header-cell {
+    border: none !important;
+    border-top: 1px solid #e7e7e7 !important;
+    background-color: transparent;
+}
+
+.fc-col-header-cell .fc-scrollgrid-sync-inner {
+    font-weight: bold;
+    color: #333;
+}
+
+.fc-col-header {
+    border: none !important;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+    border: none !important;
+}
+
+.fc-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.fc-button:hover {
+    background-color: #e0e0e0;
+    color: #000;
+    border-color: #bbb;
+}
+
+.fc-button-active {
+    background-color: #4caf50;
+    color: #fff;
+    border-color: #388e3c;
+}
+
+.fc-button:disabled {
+    background-color: #d9d9d9;
+    color: #aaa;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+
+.fc-button {
+    background-color: var(--principal-color) !important;
+    color: white !important;
+    border: none !important;
+    font-weight: bold !important;
+
+    padding: 5px 10px !important;
+}
+
+.fc-button:hover {
+    background-color: var(--principal-color-dark) !important;
+    cursor: pointer !important;
+}
+
+.fc-button.fc-button-active {
+    background-color: var(--principal-color-dark) !important;
+    color: white !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fc-button:disabled {
+    background-color: #aaa !important;
+    color: #fff !important;
+    cursor: not-allowed !important;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+th {
+    white-space: normal;
+}
+
+thead th {
+    max-width: 60px;
+}
+
+@media print {
+    .no-printable {
+        display: none;
+        margin: 0;
+    }
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e0e0e0;
+}
+
+.redender-questionnaire {
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+    }
+}

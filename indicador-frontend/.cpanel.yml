@@ -1,0 +1,8 @@
+deployment:
+  tasks:
+    - /bin/echo "Rodando o script de deploy!"
+    - /usr/bin/touch /home/minhanov/seduc.minhanovaescola.com.br/indicadores/deploy-test.txt
+    - /bin/echo "Iniciando deploy..."
+    - /bin/rsync -av dist/ /home/minhanov/seduc.minhanovaescola.com.br/indicadores/
+    - /bin/cp .htaccess /home/minhanov/seduc.minhanovaescola.com.br/indicadores/.htaccess
+    - /bin/echo "Deploy concluído com sucesso!"

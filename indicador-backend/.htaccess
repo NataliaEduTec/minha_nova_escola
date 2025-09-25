@@ -1,0 +1,12 @@
+# Bloqueia acesso ao arquivo .env e outros arquivos sensíveis
+<FilesMatch "^(\.env|\.env\..*|\.git|\.htaccess|composer\.json|composer\.lock|package\.json|package-lock\.json|yarn\.lock|artisan|phpunit\.xml)$">
+    Require all denied
+</FilesMatch>
+
+# Impede listagem de diretórios
+Options -Indexes
+
+# Protege arquivos .htaccess e .htpasswd
+<FilesMatch "^\.ht">
+    Require all denied
+</FilesMatch>
